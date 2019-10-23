@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+Click here to find max Prime!
+<button type="button" onclick="check()">Find Prime Max Number</button>
+<body>
+<script>
+    let arr = [-3,1,3,4,5,6,7,8,9,53,2];
+    let brr = [];
+    function submit(n) {
+        this.n = n;
+        this.getPrime = function (n) {
+            if(n < 2){
+                return false;
+            }
+            else{
+                for(let i = 2; i < n; i++ ){
+                    if(n % i == 0){
+                        return false;
+                    }
+                }return true;
+        }
+
+        }
+    }
+
+function check() {
+    let a = new submit();
+    for(let j = 0; j < arr.length; j++){
+        if(a.getPrime(arr[j])){
+            brr.push(arr[j]);
+        }
+    } console.log(brr);
+    let max = brr[0];
+    for(let k = 0; k < brr.length; k++){
+        if(max < brr[k]){
+            max = brr[k];
+        }
+    }
+    alert(max);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // // Tim so nguyen to
+    // function findPrime(N) {
+    //     if (N < 2) {
+    //         return false;
+    //     } else if ( N >= 2 ) {
+    //         for (let i = 2; i < N; i++) {
+    //             if (N % i == 0) {
+    //                 return false;
+    //             }
+    //         }
+    //         return true;
+    //     }
+    // }
+    // function clickme() {
+    //     for (let j = 0; j < a.length; j++) {
+    //         if (findPrime(a[j])) {
+    //             b.push(a[j]);
+    //         }
+    //     }
+    //     let max = b[0];
+    //     for (let k = 0; k < b.length; k++) {
+    //         if (b[k] < max) {
+    //             max = b[k]
+    //         }
+    //     }
+    //     document.write('Max Prime Number in Array is: ' + max+'<br/>');
+    //     document.write('Array is: '+b);
+    // };
+</script>
+
+</body>
+</html>
